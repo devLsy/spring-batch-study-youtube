@@ -11,14 +11,14 @@ spring:
     show-sql: true
     properties:
       hibernate:
-# ???? ??? ????? ?? ??? ?
+# 강의에 나온 dialect는 아래 였지만 저건 없어진 듯
 #        dialect: org.hibernate.dialect.MYSQL5InnoDBDialect
         dialect: org.hibernate.dialect.MySQL57Dialect
   datasource:
-    url: jdbc:mysql://localhost:3306/metadb?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3307/metadb?serverTimezone=Asia/Seoul
     username: batch
     password: batch
 
-  batch:
-    job:
-      names: ${job.name:NONE}
+#  batch:
+#    job:
+#      names: ${job.name:NONE}
