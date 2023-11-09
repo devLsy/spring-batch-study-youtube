@@ -1,3 +1,8 @@
+logging:
+  level:
+    root: info
+    com.lsy.sample: debug
+
 spring:
   jpa:
     hibernate:
@@ -13,3 +18,7 @@ spring:
     url: jdbc:mysql://localhost:3306/metadb?serverTimezone=Asia/Seoul
     username: batch
     password: batch
+
+  batch:
+    job:
+      names: ${job.name:NONE}
