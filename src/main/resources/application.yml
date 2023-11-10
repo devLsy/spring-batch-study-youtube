@@ -19,6 +19,6 @@ spring:
     username: batch
     password: batch
 
-#  batch:
-#    job:
-#      names: ${job.name:NONE}
+  batch:
+    job:
+      names: ${job.name:NONE}

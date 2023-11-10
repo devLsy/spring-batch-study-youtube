@@ -6,13 +6,14 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-//한줄에 읽는 파일?
-public class OneDto {
+//구분자가 있는 파일 읽기 위함
+public class TwoDto {
 
     private String one;
+    private String two;
 
     @Override
     public String toString() {
-        return one;
+        return one + two;
     }
 }
