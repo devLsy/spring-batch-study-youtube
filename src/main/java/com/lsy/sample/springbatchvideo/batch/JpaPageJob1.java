@@ -18,6 +18,7 @@ import javax.persistence.EntityManagerFactory;
 @Slf4j
 @RequiredArgsConstructor
 @Configuration
+// dept 테이블에서 데이터 읽어와서 루프 돌며 데이터를 로그로 출력하는 예제
 public class JpaPageJob1 {
 
     private final JobBuilderFactory jobBuilderFactory;

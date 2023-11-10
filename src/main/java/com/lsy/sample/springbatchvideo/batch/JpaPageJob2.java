@@ -21,6 +21,7 @@ import javax.persistence.EntityManagerFactory;
 @Slf4j
 @RequiredArgsConstructor
 @Configuration
+// dept 테이블에서 데이터 읽어와서 "NEW_" 접두어 붙여서 dept2 테이블에 저장하는 예제
 public class JpaPageJob2 {
 
     private final JobBuilderFactory jobBuilderFactory;
