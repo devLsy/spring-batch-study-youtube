@@ -42,7 +42,7 @@ public class JsonJob {
                 }))
                 .build();
     }
-    
+
     //json reader
     @Bean
     public JsonItemReader<MarketDto> jsonJob1_jsonReader() {

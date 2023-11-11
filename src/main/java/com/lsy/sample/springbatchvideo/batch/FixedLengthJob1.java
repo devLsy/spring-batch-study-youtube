@@ -10,6 +10,7 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
+import org.springframework.batch.item.file.separator.DefaultRecordSeparatorPolicy;
 import org.springframework.batch.item.file.transform.FixedLengthTokenizer;
 import org.springframework.batch.item.file.transform.Range;
 import org.springframework.context.annotation.Bean;
@@ -39,8 +40,8 @@ public class FixedLengthJob1 {
         return stepBuilderFactory.get("fixedLengthJob1_batchStep")
                 .<ThreeDto, ThreeDto>chunk(chunkSize)
                 .reader(fixedLengthJob1_FileReader())
-                .writer(ThreeDto -> ThreeDto.forEach(threeDto -> {
-                    log.debug(ThreeDto.toString());
+                .writer(threeDto -> threeDto.forEach(i -> {
+                    log.debug(threeDto.toString());
                 }))
                 .build();
     }
@@ -58,6 +59,7 @@ public class FixedLengthJob1 {
         FixedLengthTokenizer fixedLengthTokenizer = new FixedLengthTokenizer();
 
         fixedLengthTokenizer.setNames("one", "two");
+//        fixedLengthTokenizer.setColumns(new Range[]{new Range(1, 5), new Range(6, 10)});
         fixedLengthTokenizer.setColumns(new Range(1, 5), new Range(6, 10));
 
         BeanWrapperFieldSetMapper<ThreeDto> beanWrapperFieldSetMapper = new BeanWrapperFieldSetMapper<>();

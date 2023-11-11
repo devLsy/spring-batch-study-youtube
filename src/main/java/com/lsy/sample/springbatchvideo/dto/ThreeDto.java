@@ -4,9 +4,9 @@ import lombok.*;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 //구분자가 있는 파일 읽기 위함
 public class ThreeDto {
 
