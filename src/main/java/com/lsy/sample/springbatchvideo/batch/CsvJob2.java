@@ -76,7 +76,7 @@ public class CsvJob2 {
         defaultLineMapper.setFieldSetMapper(beanWrapperFieldSetMapper);
         flatFileItemReader.setLineMapper(defaultLineMapper);
         return flatFileItemReader;
-    }   
+    }
 
     // text writer
     @Bean
