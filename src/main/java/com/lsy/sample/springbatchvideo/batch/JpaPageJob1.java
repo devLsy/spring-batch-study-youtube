@@ -10,8 +10,10 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.JpaPagingItemReader;
 import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -26,7 +28,7 @@ public class JpaPageJob1 {
     private final EntityManagerFactory entityManagerFactory;
 
     //chunkSize만큼 하기 위함(로직 짜기 나름)
-    private int chunkSize = 10;
+    private int chunkSize = 100;
 
     @Bean
     public Job JpaPageJob1_batchBuild() {

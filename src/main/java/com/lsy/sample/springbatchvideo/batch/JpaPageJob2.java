@@ -15,6 +15,7 @@ import org.springframework.batch.item.database.JpaPagingItemReader;
 import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -29,8 +30,10 @@ public class JpaPageJob2 {
     private final EntityManagerFactory entityManagerFactory;
 
     //chunkSize만큼 하기 위함(로직 짜기 나름)
-    private int chunkSize = 10;
+    private int chunkSize = 10000;
 
+
+    @Primary
     @Bean
     public Job JpaPageJob2_batchBuild() {
         return jobBuilderFactory.get("jpaPageJob2")
